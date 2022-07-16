@@ -1,0 +1,39 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/opera-gx */
+
+/*WindowsControls*/
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-button{
+    color: var(--general-color) !important;
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){.titlebar-button:hover:not(.titlebar-close){
+    background-color: var(--toolbarbutton-hover-personal) !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-min{
+    padding-top: 12px !important;
+    padding-bottom: 0px !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){.titlebar-min image, .titlebar-max image, .titlebar-close image{
+    border-radius: 0 !important;  
+    height: 14px !important; width: 14px !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){.titlebar-restore image{
+    height: 14px !important; width: 13px !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10) { 
+:root:is([lwtheme-image],[style*="--lwt-additional-images"]) .titlebar-button:hover:not(.titlebar-close){
+    background-color: var(--toolbar-bgcolor) !important; color: var(--general-color) !important;
+    }}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10) { 
+:root[lwtheme-image] .titlebar-min:hover { list-style-image: url('../images/minimize.svg') !important;
+    -moz-context-properties: fill !important; fill: var(--general-color) !important; }
+}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10) { 
+:root[lwtheme-image] .titlebar-restore:hover { list-style-image: url('../images/restore.svg') !important;
+    -moz-context-properties: fill !important; fill: var(--general-color) !important; }
+}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10) { 
+:root[lwtheme-image] .titlebar-max:hover { list-style-image: url('../images/maximize.svg') !important;
+    -moz-context-properties: fill !important; fill: var(--general-color) !important; }
+}
