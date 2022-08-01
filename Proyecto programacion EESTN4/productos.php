@@ -5,7 +5,7 @@ include_once("conexion.php");
 <head>    
 		<title> Tienda de informatica</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../sistema/css/style.css"> 
+		<link rel="stylesheet" href="../sistema/css/style2.css"> 
 </head>
 <body>
 <header class="header">
@@ -27,7 +27,7 @@ include_once("conexion.php");
 		<label for="btn-menu">✖️</label>
 	</div>
 </div> 
-    <table>   
+    <table class="table">   
 		<div id="barrabuscar">
 		<form method="POST">
 		<input type="submit" value="Buscar" name="btnbuscar">
@@ -38,7 +38,7 @@ include_once("conexion.php");
                 <th colspan="5">
                     <h1>productos</h1>
                     <th>
-                        <a style="font-weight: normal; font-size: 14px;" onclick="abrirform()">Agregar</a>
+					<button id="btn-abrir-form" class="btn-abrir-form">agregar</button>
                     </th>
                 </tr>
 			<tr>
@@ -73,40 +73,29 @@ $queryproductos = mysqli_query($conn, "SELECT * FROM productos ORDER BY id asc")
 }
         ?>
     </table>
-	 <script>
-function abrirform() {
-  document.getElementById("formregistrar").style.display = "block";
-  
-}
+		<div class="overlay" id="overlay">
+			<div class="formulario">
+			<a href="#" id="btn-cerrar-form" class="btn-cerrar-form"> cerrar<i class="fas fa-times"></i></a>
+			<h1 class="titulo_form">añadir</h1>
+				<form action="agregar.php" class="form_cont" method="post">
+					<table>
+						<label for="" class="form_label">Nombre</label>
+						<input type="text" class="form_input" name="nombre">
+						<br>
+						<label for="" class="form_label">precio</label>
+						<input type="number" class="form_input" name="precio">
+						<br>
+						<label for="" class="form_label">stock</label>
+						<input type="number" class="form_input" name="stock">
+						<br>
+						<input type="submit" class="form_submit">
+					</table>
+				</form>	
+		</div>
+	
+	</div>
+	<script src="form.js"></script>
+    
 
-function cancelarform() {
-  document.getElementById("formregistrar").style.display = "none";
-}
-</script>
-<div class="caja_popup" id="formregistrar">
-  <form action="agregar.php" class="contenedor_popup" method="POST">
-        <table>
-		<tr><th colspan="2">Nuevo producto</th></tr>
-            <tr> 
-                <td>Nombre</td>
-                <td><input type="text" name="nombre" required></td>
-            </tr>
-            <tr> 
-                <td>precio</td>
-                <td><input type="number" name="precio" required></td>
-            </tr>
-            <tr> 
-                <td>stock</td>
-                <td><input type="number" name="stock" required></td>
-            </tr>
-            <tr> 	
-               <td colspan="2">
-				   <button type="button" onclick="cancelarform()">Cancelar</button>
-				   <input type="submit" name="btnregistrar" value="Registrar" onClick="javascript: return confirm('¿Deseas registrar a este usuario?');">
-			</td>
-            </tr>
-        </table>
-    </form>
-</div>
 </body>
 </html>

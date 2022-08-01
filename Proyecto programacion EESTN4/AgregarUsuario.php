@@ -10,3 +10,4 @@ header("Location:usuario.php");
 	
 
 ?>
+<script src="userform.js"></script>
